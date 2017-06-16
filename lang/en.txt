@@ -1,0 +1,303 @@
+#text for XDM main window
+
+TITLE=Xtreme Download Manager
+ADD_URL=Add URL
+DELETE=Delete
+RESUME=Resume
+PAUSE=Pause
+GRABBER=Grabber
+OPTIONS=Options
+YOUTUBE=YouTube
+EXIT=Exit
+FILE=File
+YOUTUBE_DOWNLOADER=YouTube Download
+CLIP_ADD=Add From Clipboard
+BATCH_DOWNLOAD=Batch Download
+MAKE_SHORTCUT=Create Application Shortcut
+DELETE_COMPLETED=Delete Completed
+MEDIA_GRABBER=Media Grabber
+DELETE_DWN=Delete Download
+DOWNLOAD=Download
+RESTART=Restart
+START_Q=Start Queue
+STOP_Q=Stop Queue
+TOOLS=Tools
+PROPERTIES=Properties
+HIDE_CAT=Hide Category
+REFRESH_LINK=Refresh Link
+FORCE_ASSEMBLE=Force Assemble
+BROWSER_INT=Browser Integration
+VIEW=View
+HELP=Help
+ABOUT=About
+HOME_PAGE=XDM Home
+CONTENT=Contents...
+UPDATE=Update
+TREE_DOWNLOADS=Downloads
+TREE_COMPRESSED=Compressed
+TREE_DOCUMENTS=Documents
+TREE_MUSIC=Music
+TREE_PROGRAMS=Programs
+TREE_VIDEOS=Videos
+TREE_ALL=All Categories
+TREE_UNFINISHED=Unfinished
+TREE_FINISHED=Finished
+FILE_NAME=File Name
+Q=Q
+CATEGORIES=Categories
+SIZE=Size
+STATUS=Status
+TIME_LEFT=Time left
+TRANSFER_RATE=Transfer rate
+LAST_TRY=Last Try
+DESCRIPTION=Description
+DATE_ADDED=Date Added
+SAVE_TO=Save To
+URL=URL
+REFERER=Referer
+DOWNLOAD_NOW=Download Now
+MSG_BOX_OK=OK
+NONE_SELECTED=No item selected
+DEFAULT_TITLE=XDM
+DWN_ACTIVE=Download is active
+DWN_FINISHED=Download finished
+DOWNLOAD_COMPLETE=Download Complete
+STOPPED=Stopped
+DWN_ACTIVE_OR_FINISHED=Download is either active or finished
+CONTINUE_Q=Continue Queue Processing?
+Q_STARTED=Queue already started
+Q_STOPPED=Queue already stopped
+
+#text for new download dialog
+
+NEW_DLG_TITLE=NEW DOWNLOAD
+SAVE_AS=Save As
+USER_NAME=user@domain
+PASSWORD=Password
+DOWNLOAD_LATER=Download Later
+CANCEL=CANCEL
+IGNORE_CHK_TXT=Never capture download from this address
+URL_EMPTY=URL is empty
+INVALID_URL=URL is not valid
+
+#text for download window
+FILE_SIZE=File size
+DOWNLOADED=Downloaded
+RESUME_SUPPORT=Resume support
+BACKGROUND=Background
+PREVIEW=Preview
+
+#text for dwownload messages
+CONNECT_ERR=Connection failed\nXDM could not connect to the remote server.
+FILE_CHANGED=File has been changed on the server\nPlease 'Restart' the download.
+SESSION_END=It looks like your download session has been expired\nYou can resume the download using 'Refresh Link' option.
+RESP_ERR=Server sent an Invalid Response.
+NO_RESUME=It looks like Server does not support resume feature\nPlease 'Restart' the download.
+DWN_ERR=Download Error.
+HTTP_AUTH_ERR=Authentication failed
+PROXY_AUTH_FAILED=Proxy Authentication failed
+YES=Yes
+NO=No
+ASSEMBLE_MSG=Assembling all parts...
+ASSEMBLE_ERR=Assemble failed
+PART_ERR=Partially downloaded files have been modified.\nPlease 'Restart' the download.
+CONNECTING=Connecting...
+DOWNLOADING=Downloading...
+DISCONNECT=Disconnect.
+SEND_GET=Send GET...
+PARSING_RESPONSE=Parsing response...
+
+#text for duplicate dialog
+DUP_TITLE=Download already exists
+DUP_TXT=\nThe download already exists in download list.\nPlease select an action:\n
+DUP_OP1=Auto rename the duplicate download
+DUP_OP2=Overwrite existing download
+DUP_OP3=Resume if incomplete, else open folder
+DUP_CHK=Remember selection and don't ask again
+
+#text for config dialog
+SAVE=SAVE
+CONFIG_TITLE=Settings
+CONFIG_LBL1=General
+CONFIG_LBL2=Connection
+CONFIG_LBL3=Folders
+CONFIG_LBL4=Advanced
+CONFIG_LBL5=Proxy
+CONFIG_LBL6=File Types
+CONFIG_LBL7=Sites Login
+CONFIG_LBL8=Scheduler
+CONFIG_LBL9=Exceptions
+SHOW_DWNLD_PRG=Show download progress dialog
+SHOW_DWNLD_DLG=Show download complete dialog
+SHOW_DWNLD_BOX=Show download box
+ALLOW_BROWSER=Allow browser to download if cancelled
+SHOW_DUP_ACTION=Action for duplicate download
+DWN_SEG=Segment per download
+DWN_TYM=Connection timeout
+DWN_TCP=Tcp window size
+TMP_DIR=Temporary directory:
+DST_DIR=Destination directory:
+DWN_CMD=Perform following actions on download completion
+CST_CMD=Execute custom command
+CMD_HLT=Shutdown computer
+CMD_HNG=Hungup modem
+CMD_SCN=Scan with antivirus
+HTTP_PROXY=HTTP proxy settings
+HTTPS_PROXY=HTTPS proxy settings
+FTP_PROXY=FTP proxy settings
+LBL_FILE_TYPES=Download following file types
+LBL_Q=Enable scheduler
+LBL_START_Q=Start Queue processing at:
+LBL_STOP_Q=Stop Queue processing at:
+LBL_ADD_AUTH=Add
+LBL_DEL_AUTH=Delete
+LBL_EDT_AUTH=Edit
+LBL_EXCEPT=Ignore download from these sites
+LBL_EXCEPT_LN=Enter one entry per line
+DUP__OP1=Rename
+DUP__OP2=Overwrite
+DUP__OP3=Resume/open
+DUP__OP4=Prompt
+LBL_PROXY_ADDR=Proxy <HOST:PORT>
+LBL_PROXY_USER=UserName
+LBL_PROXY_PASS=Password
+LBL_HTTP_PROXY=Use HTTP Proxy
+LBL_HTTPS_PROXY=Use HTTPS Proxy
+LBL_FTP_PROXY=Use FTP Proxy
+LBL_PROXY_INVALID=Invalid input
+LBL_DEFAULTS=Defaults
+LBL_CR=Enter Creditential
+HOST=Enter Host
+LBL_HOST=Enter Host
+LBL_USER=Enter username
+LBL_PASS=Enter password
+
+# text for batch dialog
+BATCH_LBL1=It's possible to add a group of sequential file names like img001.jpg, img002.jpg, etc., img100.jpg to XDM download queue. Use the asterisk wildcard for the file name pattern. \nFor example:   http://xdman.sourceforge.net/*.jpg
+BATCH_TTL=Batch download
+BATCH_NUM=Numbers
+BATCH_LTT=Letters
+BATCH_ADDR=Address
+BATCH_REPLC=Replace asterik to:
+BATCH_FROM=From: 
+BATCH_TO=To: 
+BATCH_WILD=Wildcard size: 
+BATCH_URL1=First URL
+BATCH_URL2=Second URL
+BATCH_URLN=Last URL
+
+# text for list download download
+LIST_TTL=Batch download
+LIST_LBL=Seleceted Items will be added to XDM Download Queue
+LIST_LBL1=Check All
+LIST_LBL2=Uncheck All
+LIST_LBL3=Start Queue Processing
+LIST_MSG=No web address found in clipboard
+SAVE_IN=Save In
+
+# text for media grabber
+MG_TXT1=XDM Media Grabber
+MG_TXT2=Always on top
+MG_TXT3=Copy
+INFO=Info
+CLEAR=Clear
+
+# text for youtube dialog
+YT_LBL1=<html>Enter the link of Youtube video you want to download.<br>e.g: http://www.youtube.com/watch?v=F7k_U1ZXybo<br><br>XDM will try to find direct download link</html>
+YT_LBL2=Downloading information 
+YT_LBL3=XDM Youtube Grabber 2014
+YT_LBL4=Get Video!
+YT_LBL5=Youtube URL is not valid.\nIt would look like http(s)://www.youtube.com/watch?v=<videoid>
+YT_LBL6=Operation failed.
+YT_LBL7=XDM can not capture this video.\nThe webpage could not be parsed.
+YT_LBL8=XDM can not capture this video.\nThe web page is does not contain any video or video is encrypted
+YT_LBL9=\nPlease wait while XDM searches for direct download link. This may take a minute or two.
+
+# text for refresh link dialog
+RF_LBL1=The download was found in below web page.\nPlease Open this link in browser
+RF_LBL2=And try to find a new download link again\nFor help please goto XDM Menu->Help->Contents
+RF_LBL3=\nPaste the new download link below
+RF_LBL4=Refresh link
+RF_LBL5=Open in browser
+
+# text for context menu
+CTX_OPEN=Open
+CTX_OPEN_FOLDER=Open Folder
+CTX_SAVE_AS=Save As...
+CTX_SHOW_PRG=Show Progress
+CTX_ADD_Q=Add to Queue
+CTX_DEL_Q=Delete from Queue
+CTX_COPY_URL=Copy URL
+CTX_COPY_FILE=Copy File
+CTX_ASM=Force assemble
+CTX_SORT=Sort by
+CTX_ASC=Ascending
+CTX_DESC=Descending
+
+FILE_NOT_FOUND=File does not exists
+FOLDER_NOT_FOUND=Folder does not exists
+DWN_INCOMPLETE=Download not finished
+DWN_ASSEMBLING=Can't rename while assembling
+THEME=Theme
+THEME_TXT=Changes will take effect next time XDM starts.
+
+# text browser integration dialog
+BI_LBL_1=XDM can capture web videos (YouTube, Metacafe etc) and take over downloads from Firefox,Chrome/Chromium,Opera etc.
+BI_LBL_2=Drag the below icon or type http://127.0.0.1:9614/xdmff.xpi\nin Firefox.
+BI_LBL_3=More Information
+BI_LBL_4=Without the above option, Advanced Browser Integration might not work properly
+BI_LBL_5=If you depend on a proxy server to connect to the Internet, please click Manual configuration on 'Others' tab.
+BI_LBL_6=To activate Browser Integration, Systems network settings need to be modified.\nIf 'Configure network automatically' is not working on your Operating System, please try 'Manual Configuration'
+#BI_LBL_6=XDM can capture downloads from Google Chrome/Chromium, Konquerer, Opera, Safari or any other browser if Advanced Browser Integration is activated.\nIf you are using Gnome or KDE, then try the 'Configure network automatically'. For other Desktop environment/ Operating system, 'Manual configuration' 
+BI_LBL_7=Configure network automatically
+BI_LBL_8=Run at startup (required for browser integration)
+BI_LBL_9=Firefox
+BI_LBL_10=Others
+BI_LBL_11=BROWSER INTEGRATION
+BI_LBL_12=Manual configuration
+BI_LBL_13=XDM will change System's proxy settings to activate advanced browser integration\nIf you depend on a proxy server to connect to Internet,\nPlease use 'Manual configuration' option.\nDo you want to continue?
+BI_LBL_14=Automatic configuration failed.\nPlease configure network settings manually.
+BI_LBL_15=Please manually add XDM to system startup.
+BI_LBL_16=Operation successful. Please Restart the browser\nPlease Note:\nIn order to work Advanced Browser Integration properly\nAlways start XDM before starting the browser\nTo make this easy you may add XDM to system startup
+BI_LBL_17=Open Google Chrome / Chromium\n\n1. Type: chrome://extensions\n2. Check' Developer mode'\n3. Click 'Load unpacked extension' and select below folder:\n<FOLDER>
+BI_LBL_19=Open folder
+BI_LBL_23=Chrome
+BI_LBL_24=Help
+BI_LBL_FF=Alternatively drag below file into Firefox:\n<FILE> 
+BI_LBL_25=Opera
+BI_LBL_26=Open Opera and press Ctrl+Shift+E or Opera menu->Extensions\nDrag the  folder:\n<FOLDER>\ninto Opera's extension page.
+
+
+# text for tray popup
+RESTORE=Restore
+
+# text for about dialog
+ABT_TTL=About XDM
+ABT_LBL1=Thanks for using this FREE program. Hope you like it.
+ABT_LBL2=View Project Home Page
+
+# text for properties window
+TYPE=Type
+DATE=Date
+PROP_TTL=Download Properties
+SAVED_IN=Folder
+UA=User-Agent
+
+# text for download complete dialog
+DWN_DONE=Download Complete
+DONT_SHOW_AGAIN=Don't show this message again
+
+# text for force assemble dialog
+ASM_TTL=Assembling
+ASM_LBL=Assembling, Please wait...
+ASM_FL=Assembling failed
+ASM_WRN=Assembling an incomplete download may result corrupt output\nDo you want to continue?
+
+#Tabs
+ALL_DOWNLOADS=All
+ALL_UNFINISHED=Incomplete
+ALL_FINISHED=Complete
+
+ADV_YT=Advanced YouTube Downloader
+THROTTLE_DLG=Speed limiter
+REFRESH_HELP=How to resume expired downloads

@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>Browser Integration</title>
+</head>
+<body>
+<p style="margin-left: 5em;"><font color="brown" size="12">Browser
+Integration</font></p>
+
+<p style="margin-left: 5em;">XDM can be intgrated with any browser
+to capture downloads. This feature also enables XDM to grab videos from
+websites like Youtube, Metacafe etc.This section describes how to enable
+this feature.</p>
+
+<p style="margin-left: 5em;"><b>If you depend on proxy server to
+connect to Internet please see instructions described later in this
+document.</b></p>
+
+<ul>
+	<li>Integration with <b>Google Chrome</b> / <b>Chromium</b> and <b>Mozilla
+	Firefox</b>:
+	<ul>
+		<li><b>Google Chrome / Chromium:</b>
+		<ul>
+			<li>Open Chrome / Chromium and type <b>chrome://extensions</b>
+			to open extension page. Alternatively goto <b>Chrome menu ->
+			Tools / More Tools ->Extensions</b></li>
+			<li>Select <b>Developer mode</b> checkbox</li>
+			<li>Click on the <b>Load unpacked extension...</b></li>
+			<li>A folder selection dialog should appear. Please select the <b>folder
+			path provided in browser integration dialog</b>, which is
+			[XDM-DIR/xdm-helper]</li>
+		</ul>
+		</li>
+	</ul>
+	<ul>
+		<li><b>Mozilla Firefox / SeaMonkey:</b>
+		<ul>
+			<li>Open browser integration dialog from XDM Tools Menu and
+			select 'Firefox' tab</li>
+			<li><b>Drag the icon into Firefox</b> or type <b>http://127.0.0.1:9614/xdmff.xpi</b>
+			in Firefox address bar</li>
+		</ul>
+		</li>
+	</ul>
+
+	</li>
+	<li>Integration with Opera, Konqueror, Safari or other browsers:
+	<ul>
+		<li><b>Opera</b>
+		<ul>
+			<li>Goto <b>Preferences->Advanced->Network->Proxy Servers</b></li>
+			<li>Check <b>automatic proxy configuration</b></li>
+			<li>provide the address: <b>http://127.0.0.1:9614/proxy.pac</b></li>
+			<li>Save the settings</li>
+			<li>Always start XDM before starting Opera or add XDM to System
+			Startup</li>
+		</ul>
+		</li>
+		<li><b>Konqueror / Rekonq</b>
+		<ul>
+			<li>Goto Settings->Configure->Proxies and provide auto proxy url
+			as <b>http://127.0.0.1:9614/proxy.pac</b></li>
+			<li>Always start XDM before starting the browser or add XDM to
+			System Startup</li>
+		</ul>
+
+		</li>
+		<li><b>Apple Safari</b>
+		<ul>
+			<li>Goto <b>Preferences->Advanced->Change settings</b><br>
+			Check <b>Automatic Proxy Configuration</b> and enter the address<b>
+			http://127.0.0.1:9614/proxy.pac</b></li>
+			<li>Always start XDM before starting the browser or add XDM to
+			System Startup</li>
+		</ul>
+		</li>
+		<li><b>Other Browsers</b>
+		<ul>
+			<li>Goto Configuration/Preferences->Network->Proxy settings and
+			provide the auto proxy address http://127.0.0.1:9614/proxy.pac</li>
+			<li>Always start XDM before starting the browser or add XDM to
+			System Startup</li>
+		</ul>
+		</li>
+	</ul>
+	</li>
+</ul>
+<p style="margin-left: 1em;"><font color="brown"><b>Using
+Browser Integration with Proxy servers:</b></font><br>
+Create file proxy.pac in any directory with following contents: <br>
+function FindProxyForURL(url, host) <br>
+{ <br>
+var proxy_yes = "PROXY
+127.0.0.1:9614;[your-proxy-host:proxy-port];DIRECT;"; <br>
+if(url.indexOf("http://")==0)return proxy_yes; <br>
+else return "[your-proxy-host:proxy-port];DIRECT;"; <br>
+} <br>
+Open systems network settings and select auto proxy configuration option
+and specify the file created above. <br>
+<br>
+NOTE: Always start XDM before starting your browser. <br>
+You may add XDM on System start-up. <br>
+Check 'Run XDM on start-up' from XDM's browser integration dialog.
+</body>
+</html>

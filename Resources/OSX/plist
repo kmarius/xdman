@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN"
+"http://www.apple.com/DTDs/PropertyList-1.0.dtd" >
+<plist version="1.0">
+	<dict>
+		<key>Label</key>
+		<string>org.sdg.xdman</string>
+		<!-- Program key is not necessary for Java -->
+
+		<key>Program</key>
+		<string>$JAVA</string>
+
+		<key>ProgramArguments</key>
+		<array>
+			<string>$JAVA</string>
+			<string>-Xdock:name=XDM</string>
+			<string>-jar</string>
+			<!-- MODIFY THIS TO POINT TO YOUR EXECUTABLE JAR FILE -->
+			<string>$JAR</string>
+			<string>-m</string>
+		</array>
+		<key>OnDemand</key>
+		<true />
+		<key>RunAtLoad</key>
+		<true />
+		<key>KeepAlive</key>
+		<false />
+	</dict>
+</plist>
