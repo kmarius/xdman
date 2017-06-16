@@ -55,7 +55,7 @@ public class ConfigDialog extends JDialog implements ActionListener {
 
 	Font plainFont, boldFont;
 
-	JCheckBox chkDwnldPrg, chkFinishedDlg, schedule, chkCustCmd, chkHaltCmd;//
+	JCheckBox chkDwnldPrg, chkDwnldNotify, chkFinishedDlg, chkFinishedNotify, schedule, chkCustCmd, chkHaltCmd;//
 	// chkHngCmd,
 	// chkAvCmd;
 
@@ -339,8 +339,9 @@ public class ConfigDialog extends JDialog implements ActionListener {
 
 	private void saveConfig() {
 		config.showDownloadPrgDlg = chkDwnldPrg.isSelected();
-		config.showDownloadPrgDlg = chkDwnldPrg.isSelected();
+		config.showDownloadPrgNotifySend = chkDwnldNotify.isSelected();
 		config.showDownloadCompleteDlg = chkFinishedDlg.isSelected();
+		config.showDownloadCompleteNotifySend = chkFinishedNotify.isSelected();
 		// config.allowbrowser = chkAllowBrowser.isSelected();
 		config.duplicateLinkAction = cmbDupAction.getSelectedIndex();
 
@@ -413,7 +414,9 @@ public class ConfigDialog extends JDialog implements ActionListener {
 
 	private void setConfig() {
 		chkDwnldPrg.setSelected(config.showDownloadPrgDlg);
+		chkDwnldNotify.setSelected(config.showDownloadPrgNotifySend);
 		chkFinishedDlg.setSelected(config.showDownloadCompleteDlg);
+		chkFinishedNotify.setSelected(config.showDownloadCompleteNotifySend);
 		// chkAllowBrowser.setSelected(config.allowbrowser);
 		cmbDupAction.setSelectedIndex(config.duplicateLinkAction);
 
@@ -962,9 +965,15 @@ public class ConfigDialog extends JDialog implements ActionListener {
 		chkDwnldPrg = new JCheckBox(getString("SHOW_DWNLD_PRG"));
 		chkDwnldPrg.setContentAreaFilled(false);
 		chkDwnldPrg.setFocusPainted(false);
+		chkDwnldNotify = new JCheckBox(getString("SHOW_DWNLD_PRG_NOTIFY"));
+		chkDwnldPrg.setContentAreaFilled(false);
+		chkDwnldPrg.setFocusPainted(false);
 		chkFinishedDlg = new JCheckBox(getString("SHOW_DWNLD_DLG"));
 		chkFinishedDlg.setContentAreaFilled(false);
 		chkFinishedDlg.setFocusPainted(false);
+		chkFinishedNotify = new JCheckBox(getString("SHOW_DWNLD_NOTIFY"));
+		chkFinishedNotify.setContentAreaFilled(false);
+		chkFinishedNotify.setFocusPainted(false);
 		// chkAllowBrowser = new JCheckBox(getString("ALLOW_BROWSER"));
 		// chkAllowBrowser.setContentAreaFilled(false);
 		// chkAllowBrowser.setFocusPainted(false);
@@ -990,6 +999,16 @@ public class ConfigDialog extends JDialog implements ActionListener {
 		b1.add(chkFinishedDlg);
 		b1.add(Box.createHorizontalGlue());
 		box.add(b1);
+		
+		Box b31 = Box.createHorizontalBox();
+		b31.add(chkDwnldNotify);
+		b31.add(Box.createHorizontalGlue());
+		box.add(b31);
+
+		Box b3 = Box.createHorizontalBox();
+		b3.add(chkFinishedNotify);
+		b3.add(Box.createHorizontalGlue());
+		box.add(b3);
 		// Box b2 = Box.createHorizontalBox();
 		// b2.add(chkAllowBrowser);
 		// b2.add(Box.createHorizontalGlue());

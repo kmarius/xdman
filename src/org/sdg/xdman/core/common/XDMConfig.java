@@ -44,7 +44,9 @@ public class XDMConfig extends Observable implements Serializable {
 
 	// private static final long serialVersionUID = -4029431942579013439L;
 	public boolean showDownloadPrgDlg = true;
+	public boolean showDownloadPrgNotifySend = true;
 	public boolean showDownloadCompleteDlg = true;
+	public boolean showDownloadCompleteNotifySend = true;
 	public boolean showDownloadBox = false;
 
 	public static final int PROMPT = 3, AUTO_RENAME = 0, RESUME = 2, OVERWRITE = 1;

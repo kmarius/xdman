@@ -864,6 +864,12 @@ public class XDMMainWindow extends XDMFrame
 				dw.showWindow();
 			}
 		}
+		
+		if (config.showDownloadPrgNotifySend) {
+			if (qi != item) {
+				notifySend("XDM", "Started: " + item.filename);
+			}
+		}
 
 		mgr.setProgressListener(dw);
 		mgr.setDownloadListener(this);
@@ -937,6 +943,7 @@ public class XDMMainWindow extends XDMFrame
 		item.status = "Download Complete" + " " + item.size;
 		item.timeleft = "";
 		item.state = IXDMConstants.COMPLETE;
+		
 
 		model.fireTableDataChanged();
 
@@ -951,15 +958,26 @@ public class XDMMainWindow extends XDMFrame
 			}
 		}
 
-		if (config.halt) {
+		if (config.halt){ 
 			executeCommands();
 		} else if (config.showDownloadCompleteDlg) {
 			DownloadCompleteDialog cdlg = new DownloadCompleteDialog(config);
 			cdlg.setData(item.filename, item.saveto);
 			cdlg.setLocationRelativeTo(null);
 			cdlg.setVisible(true);
+		} else if (config.showDownloadCompleteNotifySend) {
+			notifySend("XDM", "Completed: " + item.filename);
+		} else {
+			executeCommands();
 		}
-
+	}
+	
+	static void notifySend(String title, String text) {
+		try {
+			Runtime.getRuntime().exec(new String[]{"notify-send", title, text, "--expire-time=1000", "--app-name=XDM"});
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -1135,7 +1153,7 @@ public class XDMMainWindow extends XDMFrame
 	@Override
 	public void interceptDownload(DownloadIntercepterInfo info) {
 		addDownload(info.url, XDMUtil.getFileName(info.url), config.destdir, null, null, info.referer, info.cookies,
-				info.ua);
+				info.ua, info.noconfirm);
 	}
 
 	@Override
@@ -1938,9 +1956,8 @@ public class XDMMainWindow extends XDMFrame
 		showNotification();
 	}
 
-	@Override
 	public void addDownload(String url, String name, String folder, String user, String pass, String referer,
-			ArrayList<String> cookies, String userAgent) {
+			ArrayList<String> cookies, String userAgent, String noconfirm) {
 		NewDownloadWindow fdlg = new NewDownloadWindow(this, config);
 		fdlg.setURL(url);
 		fdlg.file.setText(name);
@@ -1948,6 +1965,7 @@ public class XDMMainWindow extends XDMFrame
 		fdlg.referer = referer;
 		fdlg.cookies = cookies;
 		fdlg.userAgent = userAgent;
+		fdlg.noconfirm = noconfirm;
 		fdlg.showDlg();
 	}
 
@@ -2028,6 +2046,9 @@ public class XDMMainWindow extends XDMFrame
 				continue;
 			} else if (a[i].equals("-u")) {
 				key = "url";
+				continue;
+			} else if (a[i].equals("-n")) {
+				arg.put("noconfirm", "noconfirm");
 				continue;
 			} else {
 				arg.put(key, a[i]);
@@ -2365,5 +2386,19 @@ public class XDMMainWindow extends XDMFrame
 
 		// new PropertyDialog(mw,null).setVisible(true);
 		// VideoDownloadDialog(null,null,null,null,null,null,config,null).setVisible(true);
+	}
+
+	
+	@Override
+	public void addDownload(String url, String name, String folder, String user, String pass, String referer,
+			ArrayList<String> cookies, String userAgent) {
+		NewDownloadWindow fdlg = new NewDownloadWindow(this, config);
+		fdlg.setURL(url);
+		fdlg.file.setText(name);
+		fdlg.setDir(config.destdir);
+		fdlg.referer = referer;
+		fdlg.cookies = cookies;
+		fdlg.userAgent = userAgent;
+		fdlg.showDlg();
 	}
 }

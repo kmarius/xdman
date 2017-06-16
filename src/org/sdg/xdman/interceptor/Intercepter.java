@@ -100,11 +100,13 @@ public class Intercepter implements Runnable {
 			String rfr = args.get("referer");
 			String cks = args.get("cookies");
 			String min = args.get("min");
+			String noc = args.get("noconfirm");
 
 			if (!XDMUtil.isNullOrEmpty(url2)) {
 				DownloadIntercepterInfo info = new DownloadIntercepterInfo();
 				info.url = url2;
 				info.referer = rfr;
+				info.noconfirm = noc;
 				ArrayList<String> cl = null;
 				if (!XDMUtil.isNullOrEmpty(cks)) {
 					cl = new ArrayList<String>();

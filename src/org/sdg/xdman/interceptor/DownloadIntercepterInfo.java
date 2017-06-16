@@ -10,6 +10,7 @@ public class DownloadIntercepterInfo {
         public String ua;
         public ArrayList<String> cookies;
         public String referer;
+		public String noconfirm;
 
         public void copyTo(DownloadIntercepterInfo info)
         {
@@ -26,6 +27,11 @@ public class DownloadIntercepterInfo {
             {
                 info.cookies = new ArrayList<String>();
                 info.cookies.addAll(cookies);
+            }
+            info.noconfirm = new String(noconfirm.toCharArray());
+            if (!XDMUtil.isNullOrEmpty(noconfirm))
+            {
+                info.noconfirm = new String(noconfirm.toCharArray());
             }
         }
    
