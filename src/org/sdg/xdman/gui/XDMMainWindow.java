@@ -379,20 +379,29 @@ public class XDMMainWindow extends XDMFrame
 		}
 
 		// System.out.println(getClass().getResource("/res/icon.png"));
-
+	
 		table.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseReleased(MouseEvent me) {
 				// JOptionPane.showMessageDialog(null,"Mouse clicked:
 				// "+me.getButton()+" "+MouseEvent.BUTTON3);
 				boolean open = false;
-				if (me.isPopupTrigger()) {
+				int r = table.rowAtPoint(me.getPoint());
+
+				if (me.getButton() == MouseEvent.BUTTON1) {
+					if (r < 0 || r >= table.getRowCount()) {
+				        table.clearSelection();
+				    }
+				}
+				
+				if (me.getButton() == MouseEvent.BUTTON3) {
+					if (r >= 0 && r < table.getRowCount() && !table.isCellSelected(r,0)) {
+				        table.setRowSelectionInterval(r, r);
+				    }
 					open = true;
 				}
 
-				if (me.getButton() == MouseEvent.BUTTON3) {
-					open = true;
-				} else if (me.getButton() == MouseEvent.BUTTON1 && me.isControlDown()) {
+				if (me.isPopupTrigger()) {
 					open = true;
 				}
 				if (open) {
@@ -403,6 +412,7 @@ public class XDMMainWindow extends XDMFrame
 				}
 			}
 		});
+		
 	}
 
 	JLabel btnTablet;
@@ -664,6 +674,7 @@ public class XDMMainWindow extends XDMFrame
 		// model = new MainListModel(list);
 		// dlist.setModel(model);
 		list.downloadStateChanged();
+	
 	}
 
 	void delDirRec(String dir) {
