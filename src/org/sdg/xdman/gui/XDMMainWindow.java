@@ -371,6 +371,7 @@ public class XDMMainWindow extends XDMFrame
 		// //
 		// // decorateButton(btn);
 		// // add(btn);
+		
 		if (config.destdir == null) {
 			config.destdir = destdir;
 		}
@@ -409,6 +410,15 @@ public class XDMMainWindow extends XDMFrame
 						createContextMenu();
 					}
 					ctxPopup.show(table, me.getX(), me.getY());
+				}
+			}
+		});
+
+		table.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyReleased(KeyEvent e) {
+				if (e.getKeyCode() == KeyEvent.VK_DELETE) {
+					removeDownloads();
 				}
 			}
 		});
