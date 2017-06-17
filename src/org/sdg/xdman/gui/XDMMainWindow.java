@@ -8,6 +8,7 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Insets;
+import java.awt.Menu;
 import java.awt.MenuItem;
 import java.awt.PopupMenu;
 import java.awt.SystemTray;
@@ -2029,17 +2030,48 @@ public class XDMMainWindow extends XDMFrame
 									 * d.height, ico)
 									 */);
 			ti.setImageAutoSize(true);
-			// System.out.println();
+			
+			PopupMenu trayPopup = new PopupMenu();
+			MenuItem exitItem = new MenuItem("Exit");
+			MenuItem visItem = new MenuItem("Visible");
+			MenuItem invisItem = new MenuItem("Inisible");
+			trayPopup.add(exitItem);
+			trayPopup.add(visItem);
+			trayPopup.add(invisItem);
+			
+			ti.setPopupMenu(trayPopup);
+			
 			try {
 				SystemTray.getSystemTray().add(ti);
 			} catch (AWTException e) {
 				e.printStackTrace();
 			}
+						
+			exitItem.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					exitXDM();
+				}			
+			});
+			visItem.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					setVisible(true);
+				}			
+			});
+			invisItem.addActionListener(new ActionListener() {
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					setVisible(false);
+				}			
+			});
 
 			ti.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mousePressed(MouseEvent e) {
-					setVisible(true);
+					if (e.getButton()== MouseEvent.BUTTON1) {
+						setVisible(true);
+					}
 				}
 			});
 		} else {
