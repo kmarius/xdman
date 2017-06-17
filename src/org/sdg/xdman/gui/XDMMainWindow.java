@@ -21,6 +21,8 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -423,6 +425,13 @@ public class XDMMainWindow extends XDMFrame
 			}
 		});
 		
+		this.addWindowListener(new WindowAdapter(){
+			public void windowClosing(WindowEvent we)
+			{
+				exitXDM();
+			}
+		});
+
 	}
 
 	JLabel btnTablet;
@@ -1162,7 +1171,6 @@ public class XDMMainWindow extends XDMFrame
 	@Override
 	public void exit() {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
@@ -1345,7 +1353,6 @@ public class XDMMainWindow extends XDMFrame
 		}
 		// addMenuItem("MEDIA_GRABBER", file);
 		addMenuItem("EXIT", file);
-		// addMenuItem("EXIT", file);
 
 		JMenu dwn = createMenu(getString("DOWNLOAD"));
 
