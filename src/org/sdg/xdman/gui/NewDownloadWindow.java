@@ -142,7 +142,7 @@ public class NewDownloadWindow extends JFrame implements ActionListener,
 	boolean cancelled = true;
 	String referer;
 	String userAgent;
-	String noconfirm;
+	boolean noconfirm;
 	public ArrayList<String> cookies;
 
 	JTextField url, file;
@@ -242,7 +242,7 @@ public class NewDownloadWindow extends JFrame implements ActionListener,
 		Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
 		setLocation(d.width / 2 - getWidth() / 2, d.height / 2 - getHeight()
 				/ 2);
-		if (noconfirm == null) {
+		if (noconfirm == false) {
 			setVisible(true);
 		} else {
 			if (!XDMUtil.validateURL(getURL())) {

@@ -106,7 +106,7 @@ public class Intercepter implements Runnable {
 				DownloadIntercepterInfo info = new DownloadIntercepterInfo();
 				info.url = url2;
 				info.referer = rfr;
-				info.noconfirm = noc;
+				info.noconfirm = (noc != null) && noc.equals("true");
 				ArrayList<String> cl = null;
 				if (!XDMUtil.isNullOrEmpty(cks)) {
 					cl = new ArrayList<String>();

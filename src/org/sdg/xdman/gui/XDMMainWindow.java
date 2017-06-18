@@ -1986,7 +1986,7 @@ public class XDMMainWindow extends XDMFrame
 	}
 
 	public void addDownload(String url, String name, String folder, String user, String pass, String referer,
-			ArrayList<String> cookies, String userAgent, String noconfirm) {
+			ArrayList<String> cookies, String userAgent, boolean noconfirm) {
 		NewDownloadWindow fdlg = new NewDownloadWindow(this, config);
 		fdlg.setURL(url);
 		fdlg.file.setText(name);
@@ -2095,20 +2095,20 @@ public class XDMMainWindow extends XDMFrame
 		String key = "url";
 		boolean min = false;
 		for (int i = 0; i < a.length; i++) {
-			if (a[i].equals("-c")) {
+			if (a[i].equals("-c") || a[i].equals("--cookie")) {
 				key = "cookie";
 				continue;
-			} else if (a[i].equals("-r")) {
+			} else if (a[i].equals("-r") || a[i].equals("--referer")) {
 				key = "referer";
 				continue;
-			} else if (a[i].equals("-m")) {
+			} else if (a[i].equals("-m") || a[i].equals("--minimize")) {
 				min = true;
 				continue;
-			} else if (a[i].equals("-u")) {
+			} else if (a[i].equals("-u") || a[i].equals("--url")) {
 				key = "url";
 				continue;
-			} else if (a[i].equals("-n")) {
-				arg.put("noconfirm", "noconfirm");
+			} else if (a[i].equals("-n") || a[i].equals("--noconfirm")) {
+				arg.put("noconfirm", "true");
 				continue;
 			} else {
 				arg.put(key, a[i]);
@@ -2400,6 +2400,7 @@ public class XDMMainWindow extends XDMFrame
 		XDMMainWindow mw = new XDMMainWindow();
 
 		XDMServer server = new XDMServer(config, mw, mw);
+
 		if (!server.start()) {
 			server.sendParams(arg);
 			System.exit(0);
@@ -2408,6 +2409,7 @@ public class XDMMainWindow extends XDMFrame
 		if (arg.get("min") == null) {
 			mw.setVisible(true);
 		}
+		
 		mw.createTray(null);
 
 		Authenticator.getInstance().load(new File(fAppDir, ".xdmauth"));
@@ -2436,6 +2438,10 @@ public class XDMMainWindow extends XDMFrame
 			}
 			mw.showBrowserIntegrationDlg();
 		}
+		
+		// also start download on first start.
+		server.sendParams(arg);
+		
 		// new XDMVideoPanel(mw, config).setVisible(true);
 		// mw.downloadNow2("http://localhost/gulabi.mp4?clen=44402297",
 		// "http://localhost/gulabi.mp4?clen=44402297",
