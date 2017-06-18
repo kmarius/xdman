@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<!-- Configuration of the Ant build system to generate a Jar file --> 
+<project name="xdman" default="CreateJar">
+	<target name="init">
+		<tstamp/>
+		<mkdir dir="bin"/>
+	</target>
+
+	<target name="compile" depends="init"
+		description="compile the source">
+		<javac srcdir="src" destdir="bin"/>
+	</target>
+
+	<target name="jar" depends="compile"
+		description="Create Jar file">
+		<jar jarfile="xdman.jar">
+			<fileset dir="bin" includes="**/*.class"/>
+			<fileset dir="." includes="ext/**"/>
+			<fileset dir="." includes="help/**"/>
+			<fileset dir="." includes="lang/**"/>
+			<fileset dir="." includes="res/**"/>
+			<fileset dir="." includes="Resources/**"/>
+			<fileset dir="." includes="scripts/**"/>
+			<fileset file="LICENSE"/>
+			<manifest>
+				<attribute name="Main-Class" value="XDM"/>
+			</manifest>
+		</jar>
+	</target>
+	<target name="clean"
+		description="clean up">
+		<delete dir="bin"/>
+	</target>
+</project>
